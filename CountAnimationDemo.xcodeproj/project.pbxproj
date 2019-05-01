@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B4933E3122799A640054C22B /* CountingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4933E3022799A640054C22B /* CountingLabel.swift */; };
+		B4933E332279A4FC0054C22B /* ConterStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4933E322279A4FC0054C22B /* ConterStackView.swift */; };
 		B4E916B522795F5100AA9C3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E916B422795F5100AA9C3F /* AppDelegate.swift */; };
 		B4E916B722795F5100AA9C3F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E916B622795F5100AA9C3F /* ViewController.swift */; };
 		B4E916BA22795F5100AA9C3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4E916B822795F5100AA9C3F /* Main.storyboard */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B4933E3022799A640054C22B /* CountingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountingLabel.swift; sourceTree = "<group>"; };
+		B4933E322279A4FC0054C22B /* ConterStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConterStackView.swift; sourceTree = "<group>"; };
 		B4E916B122795F5100AA9C3F /* CountAnimationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CountAnimationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4E916B422795F5100AA9C3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4E916B622795F5100AA9C3F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +103,8 @@
 			children = (
 				B4E916B422795F5100AA9C3F /* AppDelegate.swift */,
 				B4E916B622795F5100AA9C3F /* ViewController.swift */,
+				B4933E3022799A640054C22B /* CountingLabel.swift */,
+				B4933E322279A4FC0054C22B /* ConterStackView.swift */,
 				B4E916B822795F5100AA9C3F /* Main.storyboard */,
 				B4E916BB22795F5300AA9C3F /* Assets.xcassets */,
 				B4E916BD22795F5300AA9C3F /* LaunchScreen.storyboard */,
@@ -256,7 +262,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4933E332279A4FC0054C22B /* ConterStackView.swift in Sources */,
 				B4E916B722795F5100AA9C3F /* ViewController.swift in Sources */,
+				B4933E3122799A640054C22B /* CountingLabel.swift in Sources */,
 				B4E916B522795F5100AA9C3F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
