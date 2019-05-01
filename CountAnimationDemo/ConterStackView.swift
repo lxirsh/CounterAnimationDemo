@@ -8,18 +8,18 @@
 
 import UIKit
 
+extension UIStackView {
+    func addArrangedSubviews(_ views: UIView...) {
+        views.forEach({addArrangedSubview($0)})
+    }
+}
+
 class CounterStackView: UIStackView {
     
-    let countingLabel1 = CounterLabel(startValue: 100, endValue: 1500, animationDuration: 5)
-    let countingLabel2 = CounterLabel(startValue: 5, endValue: 50, animationDuration: 5)
-    let countingLabel3 = CounterLabel(startValue: 1, endValue: 15, animationDuration: 5)
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(views: UIView...) {
+        super.init(frame: .zero)
         
-        self.addArrangedSubview(countingLabel1)
-        self.addArrangedSubview(countingLabel2)
-        self.addArrangedSubview(countingLabel3)
+        views.forEach({addArrangedSubview($0)})
         
         self.axis = .vertical
         self.distribution = .fillEqually

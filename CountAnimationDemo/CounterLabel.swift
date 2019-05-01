@@ -1,5 +1,5 @@
 //
-//  CountingLabel.swift
+//  CounterLabel.swift
 //  CountAnimationDemo
 //
 //  Created by Lance Hirsch on 5/1/19.
@@ -24,8 +24,8 @@ class CounterLabel: UILabel {
         super.init(frame: .zero)
         
         self.backgroundColor = .white
-        self.layer.cornerRadius = 5
-        self.layer.masksToBounds = true
+//        self.layer.cornerRadius = 5
+//        self.layer.masksToBounds = true
         
         text = startValue.description
         textAlignment = .center
