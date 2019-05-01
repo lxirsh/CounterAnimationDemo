@@ -15,17 +15,21 @@ class CounterLabel: UILabel {
     fileprivate let endValue: Double
     fileprivate let animationDuration: Double
     fileprivate let animationStartDate = Date()
+    
+    fileprivate var numberFormater: NumberFormatter
 
     init(startValue: Double, endValue: Double, animationDuration: Double) {
         self.startValue = startValue
         self.endValue = endValue
         self.animationDuration = animationDuration
         
+        numberFormater = NumberFormatter()
+        numberFormater.numberStyle = .decimal
+        numberFormater.maximumFractionDigits = 0
+
         super.init(frame: .zero)
         
         self.backgroundColor = .white
-//        self.layer.cornerRadius = 5
-//        self.layer.masksToBounds = true
         
         text = startValue.description
         textAlignment = .center
@@ -44,13 +48,15 @@ class CounterLabel: UILabel {
         let elapsedTime = now.timeIntervalSince(animationStartDate)
         
         if elapsedTime > animationDuration {
-            text = String(format: "%.0f", endValue)
+//            text = String(format: "%.0f", endValue)
+            text = numberFormater.string(from: NSNumber(value: endValue))
             displayLink?.invalidate()
             displayLink = nil
         } else {
             let percentage = elapsedTime / animationDuration
-            let value = startValue + percentage * (endValue - startValue)
-            text = String(format: "%.0f", value)
+            let value = NSNumber(value: startValue + percentage * (endValue - startValue))
+//            text = String(format: "%.0f", value)
+            text = numberFormater.string(from: value)
         }
     }
 

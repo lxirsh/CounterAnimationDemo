@@ -15,14 +15,16 @@ class ViewController: UIViewController {
         
         view.backgroundColor = .black
         
-        let counterLabel1 = CounterLabel(startValue: 100, endValue: 1500, animationDuration: 5)
-        let counterLabel2 = CounterLabel(startValue: 5, endValue: 50, animationDuration: 5)
-        let counterLabel3 = CounterLabel(startValue: 1, endValue: 15, animationDuration: 5)
+        let animationDuration: Double = 2
+        
+        let exerciseLabel = CounterLabel(startValue: 0, endValue: 9, animationDuration: animationDuration)
+        let timeLabel = CounterLabel(startValue: 0, endValue: 90, animationDuration: animationDuration)
+        let caloriesBurned = CounterLabel(startValue: 0, endValue: 1260, animationDuration: animationDuration)
         
         
-        let view1 = CounterView(counterLabel: counterLabel1, iconImage: UIImage(named: "icons8-exercise-filled-50")!)
-        let view2 = CounterView(counterLabel: counterLabel2, iconImage: UIImage(named: "icons8-clock-filled-50")!)
-        let view3 = CounterView(counterLabel: counterLabel3, iconImage: UIImage(named: "icons8-calories-filled-50")!)
+        let view1 = CounterView(counterLabel: exerciseLabel, description: "Miles", iconImage: UIImage(named: "icons8-exercise-filled-50")!)
+        let view2 = CounterView(counterLabel: timeLabel, description: "Minutes", iconImage: UIImage(named: "icons8-clock-filled-50")!)
+        let view3 = CounterView(counterLabel: caloriesBurned, description: "Calories Burned", iconImage: UIImage(named: "icons8-calories-filled-50")!)
 
         
         let stackView = CounterStackView(views: view1, view2, view3)

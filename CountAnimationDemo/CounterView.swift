@@ -8,9 +8,16 @@
 
 import UIKit
 
+extension UIView {
+    func addSubviews(_ views: UIView...) {
+        views.forEach({addSubview($0)})
+    }
+}
+
 class CounterView: UIView {
     
     let counterLabel: CounterLabel
+    
     let iconImage: UIImage
     let iconImageView: UIImageView = {
         let iv = UIImageView()
@@ -19,7 +26,14 @@ class CounterView: UIView {
         return iv
     }()
     
-    init(counterLabel: CounterLabel, iconImage: UIImage) {
+    let descriptionLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.boldSystemFont(ofSize: 18)
+        label.textAlignment = .center
+        return label
+    }()
+    
+    init(counterLabel: CounterLabel, description: String, iconImage: UIImage) {
         
         self.counterLabel = counterLabel
         self.iconImage = iconImage
@@ -28,21 +42,27 @@ class CounterView: UIView {
         backgroundColor = .white
 
         iconImageView.image = iconImage
+        descriptionLabel.text = description
         
         self.layer.cornerRadius = 5
         self.layer.masksToBounds = true
         
-        addSubview(counterLabel)
-        addSubview(iconImageView)
+        addSubviews(counterLabel, descriptionLabel, iconImageView)
         counterLabel.translatesAutoresizingMaskIntoConstraints = false
         counterLabel.topAnchor.constraint(equalTo: topAnchor)
         counterLabel.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
-        counterLabel.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.5).isActive = true
+        counterLabel.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.4).isActive = true
+        
+        descriptionLabel.text = description
+        descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
+        descriptionLabel.topAnchor.constraint(equalTo: counterLabel.bottomAnchor).isActive = true
+        descriptionLabel.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
+        descriptionLabel.bottomAnchor.constraint(equalTo: iconImageView.topAnchor)
         
         iconImageView.translatesAutoresizingMaskIntoConstraints = false
-        iconImageView.topAnchor.constraint(equalTo: counterLabel.bottomAnchor).isActive = true
+        iconImageView.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 32).isActive = true
         iconImageView.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
-        iconImageView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.5).isActive = true
+        iconImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -32).isActive = true
 
     }
     
